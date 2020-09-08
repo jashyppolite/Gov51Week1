@@ -1,0 +1,35 @@
+---
+title: "Live Meeting Week 1: Reducing Transphobia"
+output:
+  html_document:
+    highlight: tango
+---
+
+
+> Broockman, David and Joshua Kalla. 2016. "[Durably Reducing Transphobia: A Field Experiment on Door-to-door Canvassing.](https://science.sciencemag.org/content/352/6282/220.abstract)" *Science* Vol 352, No. 6282. pp. 220--224
+
+
+This data comes from a randomized experiment in South Florida on whether door-to-door canvassing with a short conversation can lastingly reduce intergroup prejudices. This particular experiment targeted antitransgender prejudice and 56 canvassers were sent door to door to encourage active perspective-taking with 501 voters. Each household was randomly assigned to either the active treatment of a conversation about transgender people or they were assigned a placebo conversation about recycling. Some canvassers identified as transgender while others identified as nontransgender. 
+
+
+We have taken a subset of their data and cleaned it up for use in today's session as `transphobia.csv`. Here are a list of the variables in the data set:
+
+| Variable Name    | Description                                                                |
+|------------------|----------------------------------------------------------------------------|
+| `age`            | Age of the respondent in years                                             |
+| `female`         | 1=respondent marked "Female" on voter registration, 0 otherwise            |
+| `voted_gen_14`   | 1 if  respondent voted in the 2014 general election                        |
+| `vote_gen_12`    | 1 if respondent voted in the 2012 general election                         |
+| `treat_ind`      | 1 if respondent was assigned to treatment, 0 for control                   |
+| `racename`       | character name of racial identity indicated on voter file                  |
+| `democrat`       | 1 if respondent is a registered Democrat                                   |
+| `therm_trans_t0` | 0-100 feeling thermometer about transgender people at baseline             |
+| `therm_trans_t1` | 0-100 feeling thermometer about transgender people 3 days after treatment  |
+| `therm_trans_t2` | 0-100 feeling thermometer about transgender people 3 weeks after treatment |
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+phobia <- read.csv("data/transphobia.csv")
+```
+
